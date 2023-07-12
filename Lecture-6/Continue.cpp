@@ -12,7 +12,6 @@ int main() {
 		cout << i << " ";
 
 		if (i == 5) {
-			i++;
 			continue;
 		}
 
