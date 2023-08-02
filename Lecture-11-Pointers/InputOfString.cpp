@@ -9,7 +9,7 @@ int main() {
 	// agar delimiter mei kch pass nhi kia toh by default '\n' hota h
 	// cin.getline(arrayName, numberOfCharacters, delimiter);
 	// cin.getline(a, 1000);
-	cin.getline(a, 100, '$');
+	cin.getline(a, 1000, '$');
 
 	cout << a << endl;
 
