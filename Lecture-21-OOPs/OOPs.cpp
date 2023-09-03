@@ -31,8 +31,9 @@ public:
 	}
 
 	Car(Car &X) {
-		name = new char[strlen(X.name) + 1];
-		strcpy(name, X.name);
+		name = X.name;
+		// name = new char[strlen(X.name) + 1];
+		// strcpy(name, X.name);
 		price = X.price;
 		model = X.model;
 		seats = X.seats;
@@ -89,11 +90,15 @@ int main() {
 	B.seats = 2;
 	B.model = 2023;
 
+	Car C = A;
+
+	A.name[0] = 'T';
+
 
 	// B = A;
 	A.print();
 	B.print();
-
+	C.print();
 
 	return 0;
 }
