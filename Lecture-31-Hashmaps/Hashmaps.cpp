@@ -97,7 +97,31 @@ public:
 		}
 	}
 
+	node* search(string key) {
+		int hashIndex = hashFunction(key);
+		node* head = a[hashIndex];
+		while (head) {
+			if (head->key == key) {
+				return head;
+			}
 
+			head = head->next;
+		}
+
+		return NULL;
+	}
+
+
+	int &operator[](string key) {
+		node *ans = search(key);
+		if (ans == NULL) {
+			int garbage;
+			insert(key, garbage);
+			ans = search(key);
+		}
+
+		return ans->val;
+	}
 };
 
 int main() {
@@ -112,6 +136,11 @@ int main() {
 	h.insert("Apple", 170);
 	h.insert("Grapes", 80);
 
+
+	h["Mango"] = 150; // Update
+	h["Orange"] = 200;//Insert  krdega  orange
+
+	cout << h["Orange"] << endl;
 	h.print();
 
 
