@@ -4,9 +4,10 @@ using namespace std;
 
 class Graph {
 public:
-	list<int> adj[10000];
+	list<int> *adj;
 	int n;
 	Graph(int s) {
+		adj = new list<int>[s];
 		n = s;
 	}
 
