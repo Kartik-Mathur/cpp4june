@@ -4,6 +4,125 @@
 #include <unordered_map>
 using namespace std;
 
+class node {
+public:
+	node* left, *right;
+	node() {
+
+	}
+};
+
+int main() {
+	int a[] = {2, 1, 3, 5};
+	int n = sizeof(a) / sizeof(int);
+
+	node* root = new node();
+
+
+
+}
+
+/*
+class node {
+public:
+	char ch;
+	unordered_map<char, node*> h;
+	bool isWordEnd;
+	node(char c) {
+		ch = c;
+		isWordEnd = false;
+	}
+};
+
+class Tries {
+
+public:
+	node* root;
+	Tries() {
+		root = new node('\0');
+	}
+
+	void addWord(char *word) {
+		node* temp = root;
+
+		for (int i = 0; word[i] != '\0'; ++i)
+		{
+			char ch = word[i];
+			if (temp->h.count(ch) == 0) {
+				temp->h[ch] = new node(ch);
+				temp = temp->h[ch];
+			}
+			else {
+				temp = temp->h[ch];
+			}
+		}
+		temp->isWordEnd = true;
+	}
+
+	bool searchWord(char* word) {
+		node* temp = root;
+
+		for (int i = 0; word[i] != '\0'; ++i)
+		{
+			char ch = word[i];
+			if (temp->h.count(ch) == 0) {
+				return false;
+			}
+			else {
+				temp = temp->h[ch];
+			}
+		}
+		return temp->isWordEnd;
+	}
+
+	void printAllWordsHelper(node*root, string &x) {
+		if (root->isWordEnd) cout << x << endl;
+
+		for (auto p : root->h) {
+			x.push_back(p.first);
+			printAllWordsHelper(p.second, x);
+			x.pop_back();
+		}
+	}
+
+	void printAllWords(char *word) {
+		node* temp = root;
+		for (int i = 0; word[i] != '\0'; ++i)
+		{
+			char ch = word[i];
+			if (temp->h.count(ch) == 0) {
+				return;
+			}
+			else {
+				temp = temp->h[ch];
+			}
+		}
+
+		string x(word);
+		printAllWordsHelper(temp, x);
+	}
+
+};
+
+int main() {
+	Tries t;
+	t.addWord("Hello");
+	t.addWord("Hell");
+	t.addWord("He");
+	t.addWord("Hero");
+	t.addWord("Max");
+
+	t.printAllWords("Hel");
+// while (1) {
+// 	char word[1000];
+// 	cin >> word;
+// 	if (!t.searchWord(word)) cout << "Word Nahi hai\n";
+// 	else cout << "Word hai\n";
+// }
+}
+*/
+
+/*
 template<typename T>
 class Graph {
 public:
@@ -89,6 +208,7 @@ int main() {
 
 	return 0;
 }
+*/
 
 
 
